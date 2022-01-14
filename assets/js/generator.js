@@ -1,7 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-var randomNum = Math.floor(Math.random() * 4);
+// Number generator for getRandom functions
 function numGenerator() {
   return Math.floor(Math.random() * 4);
 }
@@ -14,6 +13,8 @@ function generatePassword(
   specialCharacters
 ) {
   var passwordGenerated = "";
+  // For loop is for the length requested by the client
+  // if(!) statements is a safeguard if client didn't request the criteria.
   for (var i = 0; i < length; i++) {
     var randomNum = numGenerator();
     switch (randomNum) {
@@ -30,7 +31,6 @@ function generatePassword(
         } else {
           passwordGenerated += getRandomUpper();
         }
-
         break;
       case 2:
         if (!numeric) {
@@ -38,7 +38,6 @@ function generatePassword(
         } else {
           passwordGenerated += getRandomNumber();
         }
-
         break;
       case 3:
         if (!specialCharacters) {
@@ -46,7 +45,6 @@ function generatePassword(
         } else {
           passwordGenerated += getRandomSymbol();
         }
-
         break;
     }
   }
